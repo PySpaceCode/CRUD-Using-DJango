@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>*******************My first form*************************</h1>
+    <form action="" method="post">
+        {% csrf_token %}
+        <label for="name">Name</label>
+        <input type="text" name="Name" id="">
+        <br>
+        <br>
+        <label for="Number">Number</label>
+        <input type="number" name="Number" id="">
+        <br>
+        <br>
+        <button name="btn_insert" >Submit</button>
+        <br>
+        <br>
+        <button name="btn_show" >SHOW</button>
+        
+    </form>
+<br><br>
+    <table>
+<tr>
+  <th>S.number</th>
+  <th>Name</th>
+  <th>number</th>
+</tr>
+{% for i in cus  %}
+<tr>
+    <td>{{i.id}}</td>
+    <td>{{i.name}}</td>
+    <td>{{i.number}}</td>
+</tr>
+{% endfor %}
+    </table>
+</body>
+</html>
